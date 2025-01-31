@@ -131,4 +131,3 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#postgresql://render:YusDu7tbhZCLb695xcwbaiEk64fHXY5K@dpg-cuebe8pu0jms73c87ec0-a/postgresdb1
