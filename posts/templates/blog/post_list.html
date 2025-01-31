@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}Blog Posts{% endblock %}
+
+{% block content %}
+    <h1 class="my-4">All Blog Posts</h1>
+    <div id="post-list">
+        {% for post in posts %}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2>
+                        <a href="{% url 'post_detail' post.pk %}" hx-get="{% url 'post_detail' post.pk %}" hx-target="body" hx-swap="outerHTML" hx-push-url="true">
+                            {{ post.title }}
+                        </a>
+                    </h2>
+                    <p><small>{{ post.created_at }}</small></p>
+                    <p>{{ post.content|slice:":100" }}...</p>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
